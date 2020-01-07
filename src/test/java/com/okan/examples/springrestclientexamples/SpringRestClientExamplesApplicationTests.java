@@ -1,4 +1,4 @@
-package com.okan.examples;
+package com.okan.examples.springrestclientexamples;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

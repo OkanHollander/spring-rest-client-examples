@@ -2,7 +2,6 @@ package com.okan.examples.springrestclientexamples.services;
 
 import com.okan.examples.api.model.User;
 import com.okan.examples.api.model.UserData;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,7 +17,6 @@ public class ApiServiceImpl implements ApiService {
 
     private RestTemplate restTemplate;
 
-    @Autowired
     public ApiServiceImpl(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
@@ -27,7 +25,6 @@ public class ApiServiceImpl implements ApiService {
     public List<User> getUsers(Integer limit) {
 
         UserData userData = restTemplate.getForObject("https://private-anon-75291b6732-apifaketory.apiary-mock.com/api/user?limit=" + limit, UserData.class);
-
         return userData.getData();
     }
 }
